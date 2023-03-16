@@ -1,6 +1,10 @@
-### find
-
-GET http://localhost:8080/vehicle/7
+### find person by id
+GET http://localhost:8080/person/1
 # Accept: application/json
 
-###
+### find vehicle by id
+GET http://localhost:8080/vehicle/2
+
+
+### find all vehicles
+GET http://localhost:8080/vehicle
