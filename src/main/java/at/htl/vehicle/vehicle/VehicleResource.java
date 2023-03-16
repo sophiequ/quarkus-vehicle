@@ -21,12 +21,12 @@ public class VehicleResource {
     @GET
     @Path("{id}")
     public VehicleDto find(@PathParam("id") long id) {
-        return vehicleMapper.fromEntity(vehicleDao.find(id));
+        return vehicleMapper.fromEntity(vehicleDao.findById(id));
     }
 
     @GET
     public List<VehicleDto> findAll() {
-        return vehicleMapper.fromEntityList(vehicleDao.findAll());
+        return vehicleMapper.fromEntityList(vehicleDao.listAll());
     }
 
 }

@@ -2,6 +2,8 @@ select setval('hibernate_sequence', 1000);
 
 insert into x_person (p_id, p_dob, p_name)
 values (1, '2023-03-15', 'Alice');
+insert into x_person (p_id, p_dob, p_name)
+values (2, '2020-01-02', 'Bob');
 
 insert into x_vehicle(v_id, v_model, v_brand)
 values (1, 'Zoe', 'Renault');

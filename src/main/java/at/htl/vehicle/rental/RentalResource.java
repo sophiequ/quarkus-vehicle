@@ -19,7 +19,7 @@ public class RentalResource {
 
     @GET
     public Response findAll() {
-        var rentals = rentalMapper.fromEntityList(rentalDao.findAll());
+        var rentals = rentalMapper.fromEntityList(rentalDao.listAll());
         return Response.ok(rentals).build();
     }
 
