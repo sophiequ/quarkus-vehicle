@@ -1,0 +1,6 @@
+### find
+
+GET http://localhost:8080/vehicle/7
+# Accept: application/json
+
+###
