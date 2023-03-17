@@ -5,7 +5,7 @@ metadata:
   name: appsrv
 
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: appsrv
@@ -21,24 +21,24 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-#          startupProbe:
-#            httpGet:
-#              path: /api/q/health
-#              port: 8080
-#            timeoutSeconds: 5
-#            initialDelaySeconds: 15
+          startupProbe:
+            httpGet:
+              path: /api/q/health
+              port: 8080
+            timeoutSeconds: 5
+            initialDelaySeconds: 15
           readinessProbe:
             tcpSocket:
               port: 8080
             initialDelaySeconds: 5
             periodSeconds: 10
-#          livenessProbe:
-#            httpGet:
-#              path: /api/q/health
-#              port: 8080
-#            timeoutSeconds: 5
-#            initialDelaySeconds: 60
-#            periodSeconds: 120
+          livenessProbe:
+            httpGet:
+              path: /api/q/health
+              port: 8080
+            timeoutSeconds: 5
+            initialDelaySeconds: 60
+            periodSeconds: 120
 ---
 apiVersion: v1
 kind: Service
